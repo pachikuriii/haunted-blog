@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
   end
 
   def show
-    ensure_user if @blog.secret
+      ensure_user if @blog.secret && User.find(current_user.id)
   end
 
   def new
