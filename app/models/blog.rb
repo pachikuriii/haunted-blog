@@ -11,7 +11,7 @@ class Blog < ApplicationRecord
   scope :published, -> { where('secret = FALSE') }
 
   scope :search, lambda { |term|
-    where("title LIKE ? OR content LIKE ?", "%#{term}%", "%#{term}%")
+    where('title LIKE ? OR content LIKE ?', "%#{term}%", "%#{term}%")
   }
 
   scope :default_order, -> { order(id: :desc) }
@@ -21,6 +21,6 @@ class Blog < ApplicationRecord
   end
 
   def ensure_premium
-      self.random_eyecatch = false unless user.premium
+    self.random_eyecatch = false unless user.premium
   end
 end

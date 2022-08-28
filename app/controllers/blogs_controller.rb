@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
   end
 
   def show
-      ensure_user if @blog.secret && User.find(current_user.id)
+    ensure_user if @blog.secret && User.find(current_user.id)
   end
 
   def new
@@ -47,7 +47,7 @@ class BlogsController < ApplicationController
 
   def ensure_user
     @blogs = current_user.blogs
-    @blog = @blogs.find(params[:id]) 
+    @blog = @blogs.find(params[:id])
   end
 
   def set_blog
