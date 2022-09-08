@@ -5,4 +5,3 @@ module BlogsHelper
     simple_format(h(blog.content))
   end
 end
- 
