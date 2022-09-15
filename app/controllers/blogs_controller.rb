@@ -12,8 +12,6 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     return unless @blog.secret
     raise ActiveRecord::RecordNotFound if current_user.nil?
-
-    ensure_user
   end
 
   def new
