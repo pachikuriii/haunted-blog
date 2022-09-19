@@ -46,8 +46,7 @@ class BlogsController < ApplicationController
   private
 
   def ensure_user
-    @blogs = current_user.blogs
-    @blog = @blogs.find(params[:id])
+    @blog = current_user.blogs.find(params[:id])
   end
 
   def blog_params
